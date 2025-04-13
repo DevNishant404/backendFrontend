@@ -1,10 +1,11 @@
+require("dotenv").config()
 const express=require("express")
 const mongoose=require("mongoose")
 const cookieParser=require("cookie-parser")
 const cors=require("cors")
 const productRouter=require("./routers/productRouter")
 
-mongoose.connect("mongodb+srv://devNishant:9szLm8NSLj-YruT@test.lm4bs.mongodb.net/testing?retryWrites=true&w=majority&appName=test").then(()=>{
+mongoose.connect(process.env.MONGODB_URI).then(()=>{
     console.log("mongodb is successfully connected")
 }).catch((error)=>{
     console.log(error)
