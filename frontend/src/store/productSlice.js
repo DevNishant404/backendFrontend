@@ -5,8 +5,10 @@ const initialState={
     data:[]
 }
 
+const backendURL="https://mybackend-ce77.onrender.com"
+
 export const addProduct=createAsyncThunk("product/addProduct",async(formData)=>{
-    let response= await fetch("http://localhost:3000/api/prodcut/add",{
+    let response= await fetch(`${backendURL}/api/prodcut/add`,{
         method:"POST",
         headers: {
             'Content-Type': 'application/json',

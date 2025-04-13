@@ -14,7 +14,7 @@ const initialFormData = {
 
 function Form() {
   const [formData, setFormData] = useState(initialFormData);
-  const {isLoading}=useSelector((state)=>state.product)
+  const { isLoading } = useSelector((state) => state.product);
 
   const dispatch = useDispatch();
 
@@ -30,16 +30,12 @@ function Form() {
   function handleOnSubmit(e) {
     console.log("hey");
     e.preventDefault();
-    dispatch(addProduct(formData)).then((data)=>console.log(data));
+    dispatch(addProduct(formData)).then((data) => console.log(data));
 
-    setFormData(initialFormData)
+    setFormData(initialFormData);
   }
 
- 
-
   return (
- 
-    
     <form onSubmit={(e) => handleOnSubmit(e)} action="">
       <div className="formdiv">
         <label htmlFor="">Prodcut name</label>
