@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./form.css";
 import { addProduct } from "../store/productSlice";
 
@@ -14,6 +14,7 @@ const initialFormData = {
 
 function Form() {
   const [formData, setFormData] = useState(initialFormData);
+  const {isLoading}=useSelector((state)=>state.product)
 
   const dispatch = useDispatch();
 
@@ -34,9 +35,11 @@ function Form() {
     setFormData(initialFormData)
   }
 
-  
+  if(!isLoading) return <h1>Successfully added the product</h1>
 
   return (
+ 
+    
     <form onSubmit={(e) => handleOnSubmit(e)} action="">
       <div className="formdiv">
         <label htmlFor="">Prodcut name</label>
