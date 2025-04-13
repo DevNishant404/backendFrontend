@@ -35,7 +35,7 @@ function Form() {
     setFormData(initialFormData)
   }
 
-  if(!isLoading) return <h1>Successfully added the product</h1>
+ 
 
   return (
  
